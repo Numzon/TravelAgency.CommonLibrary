@@ -1,4 +1,4 @@
-﻿namespace TravelAgency.CommonLibrary.Enums;
+﻿namespace TravelAgency.SharedLibrary.Enums;
 public static class CognitoGroups
 {
     public static readonly string ClientAccount = "Client";

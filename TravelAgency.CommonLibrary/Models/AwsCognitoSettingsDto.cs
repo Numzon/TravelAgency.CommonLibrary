@@ -1,4 +1,4 @@
-﻿namespace TravelAgency.CommonLibrary.Models;
+﻿namespace TravelAgency.SharedLibrary.Models;
 public sealed class AwsCognitoSettingsDto
 {
     public required string ClientId { get; init; }

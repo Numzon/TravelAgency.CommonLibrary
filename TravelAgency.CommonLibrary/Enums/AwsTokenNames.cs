@@ -1,4 +1,4 @@
-﻿namespace TravelAgency.CommonLibrary.Enums;
+﻿namespace TravelAgency.SharedLibrary.Enums;
 public static class AwsTokenNames
 {
     public static readonly string ClientId = "client_id";

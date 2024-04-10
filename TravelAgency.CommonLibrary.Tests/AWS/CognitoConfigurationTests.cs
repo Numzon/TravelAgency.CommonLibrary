@@ -1,9 +1,9 @@
 ﻿using AutoFixture;
 using Microsoft.IdentityModel.Tokens;
-using TravelAgency.CommonLibrary.AWS;
-using TravelAgency.CommonLibrary.Models;
+using TravelAgency.SharedLibrary.AWS;
+using TravelAgency.SharedLibrary.Models;
 
-namespace TravelAgency.CommonLibrary.Tests.AWS;
+namespace TravelAgency.SharedLibrary.Tests.AWS;
 public sealed class CognitoConfigurationTests
 {
     private readonly Fixture _fixture = new Fixture();

@@ -2,10 +2,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using TravelAgency.CommonLibrary.Enums;
-using TravelAgency.CommonLibrary.Models;
+using TravelAgency.SharedLibrary.Enums;
+using TravelAgency.SharedLibrary.Models;
 
-namespace TravelAgency.CommonLibrary.AWS;
+namespace TravelAgency.SharedLibrary.AWS;
 public static class CognitoConfiguration
 {
     public static IServiceCollection AddAuthenticationAndJwtConfiguration(this IServiceCollection services, AwsCognitoSettingsDto settings)

@@ -1,4 +1,4 @@
-﻿namespace TravelAgency.CommonLibrary.Enums;
+﻿namespace TravelAgency.SharedLibrary.Enums;
 public static class PolicyNames
 {
     public static readonly string ClientPolicy = "ClientPolicy";

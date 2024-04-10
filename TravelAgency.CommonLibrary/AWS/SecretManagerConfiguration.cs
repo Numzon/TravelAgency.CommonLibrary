@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
-namespace TravelAgency.CommonLibrary.AWS;
+namespace TravelAgency.SharedLibrary.AWS;
 public static class SecretManagerConfiguration
 {
     public static IConfigurationBuilder AddAndConfigureSecretManager(this IConfigurationBuilder configuration, IWebHostEnvironment environment, RegionEndpoint region, string? prefix = null)

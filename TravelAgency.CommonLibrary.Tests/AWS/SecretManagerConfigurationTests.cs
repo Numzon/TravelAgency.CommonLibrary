@@ -1,9 +1,9 @@
 ﻿using Amazon;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using TravelAgency.CommonLibrary.AWS;
+using TravelAgency.SharedLibrary.AWS;
 
-namespace TravelAgency.CommonLibrary.Tests.AWS;
+namespace TravelAgency.SharedLibrary.Tests.AWS;
 public sealed class SecretManagerConfigurationTests
 {
     [Fact]

@@ -1,6 +1,6 @@
-﻿using TravelAgency.CommonLibrary.Swagger;
+﻿using TravelAgency.SharedLibrary.Swagger;
 
-namespace TravelAgency.CommonLibrary.Tests.Swagger;
+namespace TravelAgency.SharedLibrary.Tests.Swagger;
 public sealed class SwaggerConfigurationTests
 {
     [Fact]

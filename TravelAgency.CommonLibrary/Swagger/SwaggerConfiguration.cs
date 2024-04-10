@@ -2,9 +2,9 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
-using TravelAgency.CommonLibrary.Enums;
+using TravelAgency.SharedLibrary.Enums;
 
-namespace TravelAgency.CommonLibrary.Swagger;
+namespace TravelAgency.SharedLibrary.Swagger;
 public static class SwaggerConfiguration
 {
     public static IServiceCollection AddAndConfigureSwagger(this IServiceCollection services, string serviceName)
