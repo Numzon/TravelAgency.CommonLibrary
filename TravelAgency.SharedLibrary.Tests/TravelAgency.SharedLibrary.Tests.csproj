@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TravelAgency.CommonLibrary\TravelAgency.SharedLibrary.csproj" />
+    <ProjectReference Include="..\TravelAgency.SharedLibrary\TravelAgency.SharedLibrary.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAgency.SharedLibrary", "TravelAgency.CommonLibrary\TravelAgency.SharedLibrary.csproj", "{347E61CD-E790-4489-B4AC-01286849A66D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAgency.SharedLibrary", "TravelAgency.SharedLibrary\TravelAgency.SharedLibrary.csproj", "{347E61CD-E790-4489-B4AC-01286849A66D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAgency.SharedLibrary.Tests", "TravelAgency.CommonLibrary.Tests\TravelAgency.SharedLibrary.Tests.csproj", "{F1806037-628F-4682-B724-A73A4349CEAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelAgency.SharedLibrary.Tests", "TravelAgency.SharedLibrary.Tests\TravelAgency.SharedLibrary.Tests.csproj", "{F1806037-628F-4682-B724-A73A4349CEAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
