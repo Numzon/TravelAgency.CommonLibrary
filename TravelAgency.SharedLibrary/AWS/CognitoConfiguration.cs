@@ -73,6 +73,10 @@ public static class CognitoConfiguration
                     o.AddPolicy(
                        PolicyNames.FinancialResourceManagerPolicy,
                        p => p.RequireClaim(AwsTokenNames.Groups, CognitoGroups.Employee, CognitoGroups.FinancialManager));
+
+                    o.AddPolicy(
+                       PolicyNames.SystemAdminPolicy,
+                       p => p.RequireClaim(AwsTokenNames.Groups, CognitoGroups.SystemAdmin));
                 });
 
         return services;

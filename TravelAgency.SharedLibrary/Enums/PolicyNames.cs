@@ -8,4 +8,5 @@ public static class PolicyNames
     public static readonly string HumanResourceManagerPolicy = "HumanResourceManagerPolicy";
     public static readonly string FleetManagerPolicy = "FleetManagerPolicy";
     public static readonly string FinancialResourceManagerPolicy = "FinancialManagerPolicy";
+    public static readonly string SystemAdminPolicy = "SystemAdminPolicy";
 }

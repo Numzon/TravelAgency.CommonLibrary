@@ -8,4 +8,6 @@ public static class CognitoGroups
     public static readonly string FleetManager = "FleetManager";
     public static readonly string HumanResourcesManager = "HRManager";
     public static readonly string TravelManager = "TravelManager";
+    public static readonly string SystemAdmin = "SystemAdmin";
+
 }
