@@ -15,6 +15,11 @@ public sealed class TypeEventStrategyConfig
     public void NewConfig<TEventStrategy>(string eventType)
         where TEventStrategy : IEventStrategy, new()
     {
+        if (string.IsNullOrEmpty(eventType))
+        {
+            throw new ArgumentNullException(nameof(eventType));
+        }
+
         _eventStrategies.Add(eventType, typeof(TEventStrategy));
     }
 

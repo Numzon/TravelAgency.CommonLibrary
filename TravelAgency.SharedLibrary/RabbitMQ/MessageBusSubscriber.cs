@@ -15,17 +15,9 @@ public sealed class MessageBusSubscriber : BackgroundService
     private readonly IModel _channel;
     private readonly string _queueName;
 
-    public MessageBusSubscriber(IOptions<RabbitMqSettingsDto> options, IEventReceiver eventReceiver)
+    public MessageBusSubscriber(IAsyncConnectionFactory factory, IEventReceiver eventReceiver)
     {
         _eventReceiver = eventReceiver;
-
-        var settings = options.Value;
-        var factory = new ConnectionFactory()
-        {
-            HostName = settings.Host,
-            Port = Convert.ToInt32(settings.Port)
-        };
-
         _connection = factory.CreateConnection();
         _channel = _connection.CreateModel();
         _channel.ExchangeDeclare(RabbitMqExchange.Trigger, ExchangeType.Fanout);
