@@ -15,13 +15,15 @@ public sealed class EventReceiver : IEventReceiver
         _config = config ?? TypeEventStrategyConfig.GlobalSetting;
     }
 
-    public async Task ProcessEvent(string message)
+    public async Task ProcessEvent(string message, CancellationToken cancellationToken)
     {
+        cancellationToken.ThrowIfCancellationRequested();
+
         var eventStrategy = DecodeEventAndReturnEventStrategy(message);
 
         using (var scope = _factory.CreateScope())
         {
-            await eventStrategy.ExecuteEvent(scope, message);
+            await eventStrategy.ExecuteEvent(scope, message, cancellationToken);
         }
     }
 

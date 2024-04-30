@@ -3,7 +3,7 @@
 namespace TravelAgency.SharedLibrary.Tests.Helpers;
 internal sealed class RandomImplementationEventStrategy : IEventStrategy
 {
-    public Task ExecuteEvent(IServiceScope scope, string message)
+    public Task ExecuteEvent(IServiceScope scope, string message, CancellationToken cancellationToken)
     {
         return Task.CompletedTask;
     }

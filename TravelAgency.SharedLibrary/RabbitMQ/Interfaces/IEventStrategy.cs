@@ -3,5 +3,5 @@
 namespace TravelAgency.SharedLibrary.RabbitMQ.Interfaces;
 public interface IEventStrategy
 {
-    Task ExecuteEvent(IServiceScope scope, string message);
+    Task ExecuteEvent(IServiceScope scope, string message, CancellationToken cancellationToken);
 }

@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
 using TravelAgency.SharedLibrary.Enums;
-using TravelAgency.SharedLibrary.Models;
 using TravelAgency.SharedLibrary.RabbitMQ.Interfaces;
 
 namespace TravelAgency.SharedLibrary.RabbitMQ;
@@ -35,7 +33,7 @@ public sealed class MessageBusSubscriber : BackgroundService
             var body = ea.Body;
             var notificationMessage = Encoding.UTF8.GetString(body.ToArray());
 
-            _eventReceiver.ProcessEvent(notificationMessage);
+            _eventReceiver.ProcessEvent(notificationMessage, stoppingToken);
         };
 
         _channel.BasicConsume(_queueName, true, consumer);

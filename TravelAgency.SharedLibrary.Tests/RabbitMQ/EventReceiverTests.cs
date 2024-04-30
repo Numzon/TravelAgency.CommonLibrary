@@ -28,7 +28,7 @@ public sealed class EventReceiverTests
 
         var eventReceiver = new EventReceiver(_factory.Object, _config);
 
-		eventReceiver.Invoking(x => x.ProcessEvent(_fixture.Create<string>())).Should().ThrowAsync<InvalidOperationException>();
+		eventReceiver.Invoking(x => x.ProcessEvent(_fixture.Create<string>(), _fixture.Create<CancellationToken>())).Should().ThrowAsync<InvalidOperationException>();
     }
 
     [Fact]
@@ -40,7 +40,7 @@ public sealed class EventReceiverTests
 
         var eventReceiver = new EventReceiver(_factory.Object, _config);
 
-        eventReceiver.Invoking(x => x.ProcessEvent(JsonSerializer.Serialize(randomPublished))).Should().ThrowAsync<InvalidOperationException>();
+        eventReceiver.Invoking(x => x.ProcessEvent(JsonSerializer.Serialize(randomPublished), _fixture.Create<CancellationToken>())).Should().ThrowAsync<InvalidOperationException>();
     }
 
     [Fact]
@@ -52,6 +52,6 @@ public sealed class EventReceiverTests
 
         var eventReceiver = new EventReceiver(_factory.Object, _config);
 
-        eventReceiver.Invoking(x => x.ProcessEvent(JsonSerializer.Serialize(randomPublished))).Should().NotThrowAsync<InvalidOperationException>();
+        eventReceiver.Invoking(x => x.ProcessEvent(JsonSerializer.Serialize(randomPublished), _fixture.Create<CancellationToken>())).Should().NotThrowAsync<InvalidOperationException>();
     }
 }
