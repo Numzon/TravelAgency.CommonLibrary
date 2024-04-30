@@ -10,4 +10,15 @@ public static class CognitoGroups
     public static readonly string TravelManager = "TravelManager";
     public static readonly string SystemAdmin = "SystemAdmin";
 
+    public static IEnumerable<string> GetCognitoGroups()
+    {
+        yield return ClientAccount;
+        yield return TravelAgencyAccount;
+        yield return Employee;
+        yield return FinancialManager;
+        yield return FleetManager;
+        yield return HumanResourcesManager;
+        yield return TravelManager;
+        yield return SystemAdmin;
+    }
 }
