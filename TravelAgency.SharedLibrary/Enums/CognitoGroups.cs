@@ -21,4 +21,19 @@ public static class CognitoGroups
         yield return TravelManager;
         yield return SystemAdmin;
     }
+
+    public static IEnumerable<string> GetManagersGroups()
+    {
+        yield return FinancialManager;
+        yield return FleetManager;
+        yield return HumanResourcesManager;
+        yield return TravelManager;
+    }
+
+    public static bool IsManager(string group)
+    {
+        var managers = GetManagersGroups();
+        return managers.Contains(group);
+    }
 }
+

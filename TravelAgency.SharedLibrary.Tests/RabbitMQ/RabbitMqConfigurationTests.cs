@@ -16,11 +16,12 @@ public sealed class RabbitMqConfigurationTests
     }
 
     [Fact]
-    public void AddRabbitMqPublisher_ShouldAddPublisher()
+    public void AddRabbitMqConfiguration_ShouldAddPublisher()
     {
         IServiceCollection service = new ServiceCollection();
+        var settings = _fixture.Build<RabbitMqSettingsDto>().With(x => x.Port, _fixture.Create<int>().ToString()).Create();
 
-        service.AddRabbitMqPublisher();
+        service.AddRabbitMqConfiguration(settings);
 
 
         service.Should().NotBeNull();
@@ -28,24 +29,24 @@ public sealed class RabbitMqConfigurationTests
     }
 
     [Fact]
-    public void AddRabbitMqSubscriber_ShouldAddEventReceiver()
+    public void AddRabbitMqConfiguration_ShouldAddEventReceiver()
     {
         IServiceCollection service = new ServiceCollection();
         var settings = _fixture.Build<RabbitMqSettingsDto>().With(x => x.Port, _fixture.Create<int>().ToString()).Create();
 
-        service.AddRabbitMqSubscriber(settings);
+        service.AddRabbitMqConfiguration(settings);
 
         service.Should().NotBeNull();
         service.FirstOrDefault(x => x.ServiceType.FullName is not null && x.ServiceType.FullName.Contains(nameof(IEventReceiver))).Should().NotBeNull();
     }
 
     [Fact]
-    public void AddRabbitMqSubscriber_ShouldAddMessageBusSubscriber()
+    public void AddRabbitMqConfiguration_ShouldAddMessageBusSubscriber()
     {
         IServiceCollection service = new ServiceCollection();
         var settings = _fixture.Build<RabbitMqSettingsDto>().With(x => x.Port, _fixture.Create<int>().ToString()).Create();
 
-        service.AddRabbitMqSubscriber(settings);
+        service.AddRabbitMqConfiguration(settings);
 
         service.Should().NotBeNull();
         service.FirstOrDefault(x => x.ServiceType.FullName is not null && x.ServiceType.FullName.Contains(nameof(IHostedService))).Should().NotBeNull();
@@ -53,12 +54,12 @@ public sealed class RabbitMqConfigurationTests
     }
 
     [Fact]
-    public void AddRabbitMqSubscriber_ShouldAddIAsyncConnectionFactory()
+    public void AddRabbitMqConfiguration_ShouldAddIAsyncConnectionFactory()
     {
         IServiceCollection service = new ServiceCollection();
         var settings = _fixture.Build<RabbitMqSettingsDto>().With(x => x.Port, _fixture.Create<int>().ToString()).Create();
 
-        service.AddRabbitMqSubscriber(settings);
+        service.AddRabbitMqConfiguration(settings);
 
         service.Should().NotBeNull();
         service.FirstOrDefault(x => x.ServiceType.FullName is not null && x.ServiceType.FullName.Contains(nameof(IAsyncConnectionFactory))).Should().NotBeNull();

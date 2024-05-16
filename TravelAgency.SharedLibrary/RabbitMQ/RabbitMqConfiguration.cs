@@ -7,24 +7,20 @@ using TravelAgency.SharedLibrary.RabbitMQ.Interfaces;
 namespace TravelAgency.SharedLibrary.RabbitMQ;
 public static class RabbitMqConfiguration
 {
-    public static IServiceCollection AddRabbitMqPublisher(this IServiceCollection services)
+    public static IServiceCollection AddRabbitMqConfiguration(this IServiceCollection services, RabbitMqSettingsDto settings)
     {
-        services.AddSingleton<IMessageBusPublisher, MessageBusPublisher>();
-
-        return services;
-    }
-
-    public static IServiceCollection AddRabbitMqSubscriber(this IServiceCollection services, RabbitMqSettingsDto settings)
-    {
-        services.AddSingleton<IEventReceiver, EventReceiver>();
-
         var factory = new ConnectionFactory()
         {
             HostName = settings.Host,
-            Port = Convert.ToInt32(settings.Port)
+            Port = Convert.ToInt32(settings.Port),
+            UserName = settings.Username,
+            Password = settings.Password
         };
-
         services.AddSingleton<IAsyncConnectionFactory>(factory);
+
+        services.AddSingleton<IEventReceiver, EventReceiver>();
+
+        services.AddSingleton<IMessageBusPublisher, MessageBusPublisher>();
 
         services.AddHostedService<MessageBusSubscriber>();
 
